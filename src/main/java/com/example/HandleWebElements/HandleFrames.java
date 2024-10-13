@@ -49,5 +49,20 @@ public class HandleFrames {
         obj.executeScript("arguments[0].click();",cbox);
 
         driver.switchTo().defaultContent();
+
+        //Frame5
+
+        WebElement frame5=driver.findElement(By.xpath("//frame[@src=\"frame_5.html\"]"));
+        driver.switchTo().frame(frame5);
+        driver.findElement(By.xpath("//input[@name=\"mytext5\"]")).sendKeys("Frame5");
+
+        //iframe
+
+        driver.findElement(By.linkText("https://a9t9.com")).click();
+
+        Boolean logo=driver.findElement(By.xpath("//img[@src=\"/Content/Images/ui.vision.logo2.webp\"]")).isDisplayed();
+        System.out.println(logo);
+
+        driver.switchTo().defaultContent();
     }
 }
